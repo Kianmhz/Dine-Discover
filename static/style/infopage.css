@@ -1,31 +1,108 @@
-.slider {
-    padding:150px;
-    position: relative;
+.restaurants_info_position div:last-child {
+    font-size: 25px;
+    font-style: normal;
 }
-.slider::before {
-    content: "";
+.info{
+    display: flex;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url("../img/3319.jpg") fixed;
-    background-size: cover;
-    filter: blur(3px);
+    justify-content: center;
+    padding: 10px;
 }
-.slider div {
+.info h2 {
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Restaurant description & location */
+.info .restaurant_description p,
+.info .restaurant_location p {
+    color: #666;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+/* Review Section */
+.info .reviews_section .review {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info .reviews_section .review_author {
+    font-weight: bold;
+    color: #333;
+}
+
+.info .reviews_section .review_date {
+    color: #999;
+    font-size: 0.8em;
+}
+
+.info .reviews_section .review_rating {
+    color: #f1c40f;
+    margin: 10px 0;
+}
+
+.info .reviews_section .review_content p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Add Review Form */
+.info .reviews_section .add_review h3 {
+    margin-top: 20px;
+}
+
+.info .reviews_section .review_form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info .reviews_section .review_form input, 
+.info .reviews_section .review_form select, 
+.info .reviews_section .review_form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.info .reviews_section .review_form button.submit_review {
+    background-color: #27ae60;
     color: white;
-    z-index: 100;
-    position: relative;
-    text-align: center;
-    font-size: 40px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
 }
-.slider::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
+.tab {
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+
+.tab .container {
+    display: flex;
+    justify-content: center;
+}
+
+.tab_button {
+    background: white;
+    padding: 30px 170px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    outline: none;
+}
+
+.tab_button:hover {
+    background: #f8f8f8;
+}
+
+.tab_button.active {
+    border-bottom: 3px solid black;
+    color: black;
 }

@@ -25,13 +25,15 @@ main page
 
     <div class="restaurants_grid container">
         <div class="restaurants_info">
-            <div class="thumbnail_container">
-                <img class="thumbnail" src="{% static 'img/rest_1.jpeg' %}">
-                <div class="restaurants_info_position">
-                    <div class="restaurants_name">Stanford Smith</div>
-                    <div class="restaurants_location">Mumbai, India</div>
+            <a href="{% url 'info' %}">
+                <div class="thumbnail_container">
+                    <img class="thumbnail" src="{% static 'img/rest_1.jpeg' %}">
+                    <div class="restaurants_info_position">
+                        <div class="restaurants_name">Stanford Smith</div>
+                        <div class="restaurants_location">Mumbai, India</div>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="rating">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -42,13 +44,15 @@ main page
             </div>
         </div>
         <div class="restaurants_info">
-            <div class="thumbnail_container">
-                <img class="thumbnail" src="{% static 'img/rest_2.jpeg' %}">
-                <div class="restaurants_info_position">
-                    <div class="restaurants_name">Vermeulen</div>
-                    <div class="restaurants_location">London, United Kingdom</div>
+            <a href="{% url 'info' %}">
+                <div class="thumbnail_container">
+                    <img class="thumbnail" src="{% static 'img/rest_2.jpeg' %}">
+                    <div class="restaurants_info_position">
+                        <div class="restaurants_name">Vermeulen</div>
+                        <div class="restaurants_location">London, United Kingdom</div>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="rating">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -59,13 +63,15 @@ main page
             </div>
         </div>
         <div class="restaurants_info">
-            <div class="thumbnail_container">
-                <img class="thumbnail" src="{% static 'img/rest_3.png' %}">
-                <div class="restaurants_info_position">
-                    <div class="restaurants_name">Hotel Royale Heritage</div>
-                    <div class="restaurants_location">Mumbai, India</div>
+            <a href="{% url 'info' %}">
+                <div class="thumbnail_container">
+                    <img class="thumbnail" src="{% static 'img/rest_3.png' %}">
+                    <div class="restaurants_info_position">
+                        <div class="restaurants_name">Hotel Royale Heritage</div>
+                        <div class="restaurants_location">Mumbai, India</div>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="rating">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -76,13 +82,15 @@ main page
             </div>
         </div>
         <div class="restaurants_info">
-            <div class="thumbnail_container">
-                <img class="thumbnail" src="{% static 'img/rest_4.jpeg' %}">
-                <div class="restaurants_info_position">
-                    <div class="restaurants_name">Vermeulen</div>
-                    <div class="restaurants_location">London, United Kingdom</div>
+            <a href="{% url 'info' %}">
+                <div class="thumbnail_container">
+                    <img class="thumbnail" src="{% static 'img/rest_4.jpeg' %}">
+                    <div class="restaurants_info_position">
+                        <div class="restaurants_name">Vermeulen</div>
+                        <div class="restaurants_location">London, United Kingdom</div>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="rating">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -93,13 +101,15 @@ main page
             </div>
         </div>
         <div class="restaurants_info">
-            <div class="thumbnail_container">
-                <img class="thumbnail" src="{% static 'img/rest_5.png' %}">
-                <div class="restaurants_info_position">
-                    <div class="restaurants_name">Stanford Smith</div>
-                    <div class="restaurants_location">London, United Kingdom</div>
+            <a href="{% url 'info' %}">
+                <div class="thumbnail_container">
+                    <img class="thumbnail" src="{% static 'img/rest_5.png' %}">
+                    <div class="restaurants_info_position">
+                        <div class="restaurants_name">Stanford Smith</div>
+                        <div class="restaurants_location">London, United Kingdom</div>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="rating">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -110,13 +120,15 @@ main page
             </div>
         </div>
         <div class="restaurants_info">
-            <div class="thumbnail_container">
-                <img class="thumbnail" src="{% static 'img/rest_6.jpeg' %}">
-                <div class="restaurants_info_position">
-                    <div class="restaurants_name">Hotel Royale Heritage</div>
-                    <div class="restaurants_location">London, United Kingdom</div>
+            <a href="{% url 'info' %}"></a>
+                <div class="thumbnail_container">
+                    <img class="thumbnail" src="{% static 'img/rest_6.jpeg' %}">
+                    <div class="restaurants_info_position">
+                        <div class="restaurants_name">Hotel Royale Heritage</div>
+                        <div class="restaurants_location">London, United Kingdom</div>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="rating">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -126,5 +138,6 @@ main page
                 <div>(review 19)</div>
             </div>
         </div>
+    </div>
 </section>
 {% endblock content %}

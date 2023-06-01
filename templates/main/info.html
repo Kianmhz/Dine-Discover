@@ -6,61 +6,72 @@ info page
 {% endblock title %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'style/info.css' %}">
+<link rel="stylesheet" href="{% static 'style/infopage.css' %}">
 {% endblock style %}
 
 {% block content %}
-    <div class="slider">
-        <div class="restaurants_info_position">
-            <div class="restaurants_name">Stanford Smith</div>
-            <div class="restaurants_location">Mumbai, India</div>
+    <div class="slider restaurant">
+        <div class="container">
+            <div class="restaurants_info_position">
+                <div class="restaurants_name">Stanford Smith</div>
+                <div class="restaurants_location">Mumbai, India</div>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <div class="container">
+            <button class="tab_button active">About</button>
+            <button class="tab_button">Menu</button>
+            <button class="tab_button">Pictures</button>
         </div>
     </div>
     <div class="info">
-        <h2>About Restaurant</h2>
-        <div class="restaurant_description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in bibendum velit, at posuere nisi. Sed consequat sem vel elit auctor congue. Proin malesuada arcu nec dolor dignissim, at scelerisque elit posuere.</p>
-        </div>
-        
-        <h2>Location</h2>
-        <div class="restaurant_location">
-            <p>The restaurant is conveniently located in the heart of Mumbai, India. Its address is 123 Main Street, Mumbai. It is easily accessible and offers a stunning view of the city skyline.</p>
-        </div>
-        
-        <h2>Customer Reviews</h2>
-        <div class="reviews_section">
-            <div class="review">
-                <div class="review_author">John Doe</div>
-                <div class="review_date">March 7, 2023</div>
-                <div class="review_rating">★★★★★</div>
-                <div class="review_content">
-                    <p>This restaurant exceeded my expectations! The food was delicious and the service was impeccable. I highly recommend trying their signature dishes.</p>
-                </div>
-            </div>
-            <div class="review">
-                <div class="review_author">Jane Smith</div>
-                <div class="review_date">February 21, 2023</div>
-                <div class="review_rating">★★★☆☆</div>
-                <div class="review_content">
-                    <p>The ambiance of the restaurant was great, but I found the food to be average. The prices were a bit high considering the portion sizes. Overall, it was an okay experience.</p>
-                </div>
+        <div class="container">
+            <h2>About Restaurant</h2>
+            <div class="restaurant_description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in bibendum velit, at posuere nisi. Sed consequat sem vel elit auctor congue. Proin malesuada arcu nec dolor dignissim, at scelerisque elit posuere.</p>
             </div>
             
-            <div class="add_review">
-                <h3>Add your review</h3>
-                <form class="review_form">
-                    <input type="text" name="review_author" placeholder="Your Name" required>
-                    <select name="review_rating" required>
-                        <option value="">Rating (1-5)</option>
-                        <option value="1">★☆☆☆☆</option>
-                        <option value="2">★★☆☆☆</option>
-                        <option value="3">★★★☆☆</option>
-                        <option value="4">★★★★☆</option>
-                        <option value="5">★★★★★</option>
-                    </select>
-                    <textarea name="review_content" placeholder="Write your review here..." required></textarea>
-                    <button type="submit" class="submit_review">Submit Review</button>
-                </form>
+            <h2>Location</h2>
+            <div class="restaurant_location">
+                <p>The restaurant is conveniently located in the heart of Mumbai, India. Its address is 123 Main Street, Mumbai. It is easily accessible and offers a stunning view of the city skyline.</p>
+            </div>
+            
+            <h2>Customer Reviews</h2>
+            <div class="reviews_section">
+                <div class="review">
+                    <div class="review_author">John Doe</div>
+                    <div class="review_date">March 7, 2023</div>
+                    <div class="review_rating">★★★★★</div>
+                    <div class="review_content">
+                        <p>This restaurant exceeded my expectations! The food was delicious and the service was impeccable. I highly recommend trying their signature dishes.</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="review_author">Jane Smith</div>
+                    <div class="review_date">February 21, 2023</div>
+                    <div class="review_rating">★★★☆☆</div>
+                    <div class="review_content">
+                        <p>The ambiance of the restaurant was great, but I found the food to be average. The prices were a bit high considering the portion sizes. Overall, it was an okay experience.</p>
+                    </div>
+                </div>
+                
+                <div class="add_review">
+                    <h3>Add your review</h3>
+                    <form class="review_form">
+                        <input type="text" name="review_author" placeholder="Your Name" required>
+                        <select name="review_rating" required>
+                            <option value="">Rating (1-5)</option>
+                            <option value="1">★☆☆☆☆</option>
+                            <option value="2">★★☆☆☆</option>
+                            <option value="3">★★★☆☆</option>
+                            <option value="4">★★★★☆</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                        <textarea name="review_content" placeholder="Write your review here..." required></textarea>
+                        <button type="submit" class="submit_review">Submit Review</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

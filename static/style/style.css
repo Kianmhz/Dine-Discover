@@ -92,7 +92,10 @@ header .container {
     color: #fd607f;
 }
 .slider {
-    padding:150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
     position: relative;
 }
 .slider::before {
@@ -105,6 +108,9 @@ header .container {
     background: url("../img/3319.jpg") fixed;
     background-size: cover;
     filter: blur(3px);
+}
+.restaurant::before{
+    background: url("../img/rest_1.jpeg") fixed;
 }
 .slider div {
     color: white;
@@ -182,7 +188,7 @@ footer .main_footer .container > div a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 60px 0px;
+    margin: 50px 0px;
 }
 .thumbnail
 {
