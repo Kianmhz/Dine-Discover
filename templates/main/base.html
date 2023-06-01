@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/bc8482cdd5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    {% block style %}
+    {% endblock style %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    {% include './header.html' %}
+    {% block content %}
+    {% endblock content %}
+    {% include './footer.html' %}
+</body>
+</html>

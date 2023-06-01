@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="{% static 'style/auth.css' %}">
+</head>
+<body>
+    <div class="slider">
+        <div class="login-form">
+            <h1>Welcome to Our Website</h1>
+            <div class="search">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="search">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="search">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div class="search">
+                <input type="password" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="findout_button">Sign Up</button>
+            <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>

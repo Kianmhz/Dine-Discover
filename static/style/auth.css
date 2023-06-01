@@ -1,0 +1,78 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: Roboto, Arial;
+    padding-top: 70px;
+    background: #edf1fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+.login-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-direction: column;
+}
+.login-form p:last-child {
+    font-size: 15px;
+}
+.login-form a {
+    color: rgba(255, 255, 255, 0.596)
+}
+.slider::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../img/3319.jpg") fixed;
+    background-size: cover;
+    filter: blur(3px);
+}
+.slider div {
+    color: white;
+    z-index: 100;
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+}
+.slider::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+.findout_button {
+    margin-top: 10px;
+    padding:10px 40px;
+    background: #5e58f8;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.findout_button:active {
+    background: #3a33ff;
+    transition: 0.5s;
+}
+.search input {
+    width: 350px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+.search input::placeholder {
+    color: #989faf;
+}

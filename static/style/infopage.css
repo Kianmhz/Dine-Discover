@@ -1,0 +1,31 @@
+.slider {
+    padding:150px;
+    position: relative;
+}
+.slider::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../img/3319.jpg") fixed;
+    background-size: cover;
+    filter: blur(3px);
+}
+.slider div {
+    color: white;
+    z-index: 100;
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+}
+.slider::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
