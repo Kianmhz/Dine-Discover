@@ -1,0 +1,43 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %}
+info page
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'style/userprofile.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="review_section">
+    <div class="container">
+        <h2>userID Reviews</h2>
+        <div class="review">
+            <h3>Restaurant Name 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="review">
+            <h3>Restaurant Name 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="review">
+            <h3>Restaurant Name 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="review">
+            <h3>Restaurant Name 4</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="review">
+            <h3>Restaurant Name 5</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
+            <a href="#">Read more</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

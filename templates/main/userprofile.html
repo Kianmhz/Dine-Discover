@@ -1,0 +1,51 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %}
+info page
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'style/userprofile.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="profile">
+    <div class="container">
+        <div class="profile_avatar">
+            <img src="{% static 'img/rest_1.jpeg' %}" />
+        </div>
+        <div class="profile_info">
+            <h3>name</h3>
+            <p>@userID</p>
+            <a href="{% url 'home' %}"><button class="edit_button">Edit Profile</button></a>
+        </div>
+        <div class="profile_about">
+            <h2>About</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur illo tenetur
+                facilis sunt nemo debitis quisquam hic atque aut? Ducimus alias placeat optio
+                accusamus repudiandae quis ab ex exercitationem rem?
+            </p>
+        </div>
+    </div>
+</div>
+<div class="review_section">
+    <div class="container">
+        <h2>Recent Reviews</h2>
+        <div class="review">
+            <h3>Restaurant Name 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="review">
+            <h3>Restaurant Name 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="all_reviews_button_div">
+            <a href="{% url 'reviews' %}"><button class="all_reviews_button">See All Reviews</button></a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

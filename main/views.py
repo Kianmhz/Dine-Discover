@@ -21,3 +21,22 @@ def signupPage(request):
 def infoPage(request):
     context = {}
     return render(request, "main/info.html", context)
+
+
+def aboutUsPage(request):
+    context = {}
+    return render(request, "main/aboutus.html", context)
+
+
+def contactPage(request):
+    context = {}
+    return render(request, "main/contact.html", context)
+
+
+def userprofilePage(request):
+    context = {}
+    return render(request, "main/userprofile.html", context)
+
+def reviewsPage(request):
+    context = {}
+    return render(request, "main/reviews.html", context)

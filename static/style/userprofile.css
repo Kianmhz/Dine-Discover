@@ -1,0 +1,114 @@
+.profile {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.profile .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile_avatar img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.profile_info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.profile_about {
+    padding-top: 20px;
+}
+
+.profile_about h2{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.profile_info h3, .profile_about h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile_info p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.edit_button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.review_section {
+    display: flex;
+    justify-content: center;
+}
+
+.review_section h2 {
+    color: #333;
+    font-size: 32px;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.review_section .review {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.review_section .review h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.review_section .review p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.review_section .review a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.all_reviews_button_div {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.all_reviews_button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
