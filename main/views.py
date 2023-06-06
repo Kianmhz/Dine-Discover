@@ -40,3 +40,7 @@ def userprofilePage(request):
 def reviewsPage(request):
     context = {}
     return render(request, "main/reviews.html", context)
+
+def editprofilePage(request):
+    context = {}
+    return render(request, "main/editprofile.html", context)

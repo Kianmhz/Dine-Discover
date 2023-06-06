@@ -10,42 +10,42 @@
     align-items: center;
 }
 
-.profile_avatar img {
+.profile-avatar img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
 }
 
-.profile_info {
+.profile-info {
     text-align: center;
     margin-top: 10px;
 }
 
-.profile_about {
+.profile-about {
     padding-top: 20px;
 }
 
-.profile_about div{
+.profile-about div{
     line-height: 1.5;
     margin-bottom: 20px;
 }
 
-.profile_about h2{
+.profile-about h2{
     padding-bottom: 10px;
     text-align: center;
 }
 
-.profile_info h3, .profile_about h3 {
+.profile-info h3, .profile-about h3 {
     color: #333;
     margin-bottom: 10px;
 }
 
-.profile_info p {
+.profile-info p {
     color: #777;
     margin-bottom: 20px;
 }
 
-.edit_button {
+.edit-button {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -57,20 +57,20 @@
     cursor: pointer;
     border-radius: 5px;
 }
-
-.review_section {
+/* reviews sectioin */
+.review-section {
     display: flex;
     justify-content: center;
 }
 
-.review_section h2 {
+.review-section h2 {
     color: #333;
     font-size: 32px;
     margin: 20px 0px;
     text-align: center;
 }
 
-.review_section .review {
+.review-section .review {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -80,33 +80,33 @@
     flex-direction: column;
 }
 
-.review_section .review h3 {
+.review-section .review h3 {
     color: #333;
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-.review_section .review p {
+.review-section .review p {
     color: #666;
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 10px;
 }
 
-.review_section .review a {
+.review-section .review a {
     color: #007BFF;
     text-decoration: none;
     font-weight: bold;
     margin-top: auto;
 }
 
-.all_reviews_button_div {
+.all-reviews-button-div {
     display: flex;
     justify-content: center;
     margin: 20px;
 }
 
-.all_reviews_button {
+.all-reviews-button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -116,4 +116,61 @@
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+}
+/* edit profile section */
+.editProfileAvatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editProfileAvatar img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.editSymbol img {
+  position: absolute;
+  border-radius: 25%;
+  width: 40px;
+  height: 40px;
+  right: 950px;
+  bottom: 766px;
+  background-color: #edf1fc;
+}
+
+.editProfileGroup {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.editProfileGroup label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.editProfileGroup input, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.editProfileSubmit {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.editProfileSubmit:hover {
+    background-color: #0056b3;
 }

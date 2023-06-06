@@ -45,7 +45,7 @@ header .container {
     font-weight: bold;
 }
 
-.joinus_button {
+.joinus-button {
     padding:10px 40px;
     background: white;
     border-width: 1px;
@@ -78,17 +78,17 @@ header .container {
     transform: rotate(90deg);
     position: absolute;
 }
-.joinus_button:hover {
+.joinus-button:hover {
     background-color: #f8f8f8;
     transition: 0.5s;
 }
 .right-section a:nth-child(6) {
     color: #7d7af9;
 }
-.logo_text {
+.logo-text {
     text-transform: uppercase;
 }
-.logo_text span {
+.logo-text span {
     color: #fd607f;
 }
 .slider {
@@ -128,7 +128,7 @@ header .container {
     top: 0;
     left: 0;
 }
-.findout_button {
+.findout-button {
     padding:10px 40px;
     background: #5e58f8;
     border: none;
@@ -137,7 +137,7 @@ header .container {
     cursor: pointer;
     transition: 0.5s;
 }
-.findout_button:active {
+.findout-button:active {
     background: #3a33ff;
     transition: 0.5s;
 }
@@ -167,19 +167,19 @@ footer {
     width: 100%;
     background: white;
 }
-footer .main_footer .container {
+footer .main-footer .container {
     display: flex;
 }
-footer .main_footer .container > div {
+footer .main-footer .container > div {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-footer .main_footer .container > div span {
+footer .main-footer .container > div span {
     padding-bottom: 22px;
     color: #818994;
 }
-footer .main_footer .container > div a {
+footer .main-footer .container > div a {
     padding-bottom: 8px;
     color: #989faf;
 }
@@ -199,7 +199,7 @@ footer .main_footer .container > div a {
     border-radius: 7px 7px 0px 0px;
     position: relative;
 }
-.restaurants_grid {
+.restaurants-grid {
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -214,37 +214,37 @@ footer .main_footer .container > div a {
     color: #989faf;
     font-size: 20px;
 }
-.restaurants_info {
+.restaurants-info {
     background: white;
     border-radius: 7px;
     position: relative;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.05);
     transition: 0.5s;
 }
-.restaurants_info:hover {
+.restaurants-info:hover {
     transform: scale(1.1);
     transition: 0.5s;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
-.restaurants_name {
+.restaurants-name {
     color: white;
     font-size: 17px;
 }
-.restaurants_location {
+.restaurants-location {
     color: rgba(255, 255, 255, 0.822);
     font-size: 12px;
     font-style: italic;
 }
-.restaurants_info_position {
+.restaurants-info-position {
     position: absolute;
     bottom: 15px;
     left: 20px;
     z-index: 100;
 }
-.thumbnail_container {
+.thumbnail-container {
     position: relative;
 }
-.thumbnail_container::after {
+.thumbnail-container::after {
     content: "";
     width: 100%;
     height: 100%;
@@ -265,29 +265,29 @@ footer .main_footer .container > div a {
     color: #989faf;
     margin-left: 10px;
 }
-.main_footer {
+.main-footer {
     border-bottom: 1px solid #b7babd81;
     width: 100%;
     justify-content: center;
     display: flex;
     padding: 30px 0px;
 }
-.copyright_section {
+.copyright-section {
     display: flex;
     width: 100%;
     justify-content: center;
     padding: 10px
 }
-.copyright_section .container {
+.copyright-section .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.copyright_section .container .policy {
+.copyright-section .container .policy {
     display: flex;
     font-size: 12px;
 }
-.copyright_section .container .social {
+.copyright-section .container .social {
     display: flex;
     gap: 40px;
     color: #989faf;

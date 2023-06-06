@@ -10,4 +10,5 @@ urlpatterns = [
     path("contact/", views.contactPage, name='contact'),
     path("userprofile/", views.userprofilePage, name='profile'),
     path("reviews/", views.reviewsPage, name='reviews'),
+    path("editprofile/", views.editprofilePage, name='editP'),
 ]

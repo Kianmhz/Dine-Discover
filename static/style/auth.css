@@ -50,7 +50,7 @@ body {
     top: 0;
     left: 0;
 }
-.findout_button {
+.findout-button {
     margin-top: 10px;
     padding:10px 40px;
     background: #5e58f8;
@@ -60,7 +60,7 @@ body {
     cursor: pointer;
     transition: 0.5s;
 }
-.findout_button:active {
+.findout-button:active {
     background: #3a33ff;
     transition: 0.5s;
 }

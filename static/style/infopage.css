@@ -1,4 +1,4 @@
-.restaurants_info_position div:last-child {
+.restaurants-info-position div:last-child {
     font-size: 25px;
     font-style: normal;
 }
@@ -6,7 +6,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: 10px;
+    padding: 20px;
 }
 .info h2 {
     color: #333;
@@ -14,62 +14,65 @@
 }
 
 /* Restaurant description & location */
-.info .restaurant_description p,
-.info .restaurant_location p {
+.info .restaurant-description p,
+.info .restaurant-location p {
     color: #666;
     line-height: 1.5;
     padding: 10px;
 }
 
 /* Review Section */
-.info .reviews_section .review {
+.info .reviews-section .review {
     border-bottom: 1px solid #ccc;
     padding: 10px;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.info .reviews_section .review_author {
+.info .reviews-section .review-author {
     font-weight: bold;
     color: #333;
 }
 
-.info .reviews_section .review_date {
+.info .reviews-section .review-date {
     color: #999;
     font-size: 0.8em;
 }
 
-.info .reviews_section .review_rating {
+.info .reviews-section .review-rating {
     color: #f1c40f;
     margin: 10px 0;
 }
 
-.info .reviews_section .review_content p {
+.info .reviews-section .review-content p {
     color: #666;
     line-height: 1.5;
 }
 
 /* Add Review Form */
-.info .reviews_section .add_review h3 {
+.info .reviews-section .add-review h3 {
     margin-top: 20px;
 }
 
-.info .reviews_section .review_form {
+.info .reviews-section .review-form {
     display: flex;
     flex-direction: column;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.info .reviews_section .review_form input, 
-.info .reviews_section .review_form select, 
-.info .reviews_section .review_form textarea {
-    padding: 10px;
+.info .reviews-section .review-form input, 
+.info .reviews-section .review-form select, 
+.info .reviews-section .review-form textarea {
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
 }
 
-.info .reviews_section .review_form button.submit_review {
+.info .reviews-section .review-form button.submit-review {
     background-color: #27ae60;
     color: white;
     padding: 10px;
@@ -87,7 +90,7 @@
     justify-content: center;
 }
 
-.tab_button {
+.tab-button {
     background: white;
     padding: 30px 170px;
     color: black;
@@ -98,11 +101,11 @@
     outline: none;
 }
 
-.tab_button:hover {
+.tab-button:hover {
     background: #f8f8f8;
 }
 
-.tab_button.active {
+.tab-button.active {
     border-bottom: 3px solid black;
     color: black;
 }
