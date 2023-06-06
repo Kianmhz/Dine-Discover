@@ -25,6 +25,11 @@
     padding-top: 20px;
 }
 
+.profile_about div{
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
 .profile_about h2{
     padding-bottom: 10px;
     text-align: center;

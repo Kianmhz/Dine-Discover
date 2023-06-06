@@ -5,6 +5,53 @@
 About Us page
 {% endblock title %}
 
-{% block content %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'style/userprofile.css' %}">
+{% endblock style %}
 
+{% block content %}
+<div class="profile">
+    <div class="container">
+        <div class="profile_avatar">
+            <img src="{% static 'img/rest_1.jpeg' %}" alt="Profile Picture"/>
+        </div>
+        <div class="profile_info">
+            <h3>Kianmehr Haddad Zahmatkesh</h3>
+            <p>Web Developer | Adventurer</p>
+        </div>
+        <div class="profile_about">
+            <h2>My journey</h2>
+            <div>
+                Welcome to Dine Discover, your one-stop solution for discovering the best restaurants in town!
+            </div>
+            
+            <div>
+                Dine Discover began as a personal project, an avenue for me to hone my skills in web development.
+                As I started building the site, I realized that this training exercise could actually be turned into a useful tool.
+                I saw potential in creating a platform where people could easily find restaurants, cafes, and bars, as well as share their own experiences and reviews.
+            </div>
+            
+            <div>
+                The journey from a personal project to a fully functional website was a challenging yet rewarding experience.
+                As I delved deeper into the development, I explored different frameworks, navigated through complex problems, and came out the other side with a wealth of knowledge and experience.
+                It was a deep dive into the intricacies of web development, and every step was an opportunity to learn, grow, and improve.
+            </div>
+            
+            <div>
+                What started as a training exercise turned into a passion project.
+                It was the perfect blend of my love for food and tech.
+                Each restaurant added, each review shared, each visitor who found their perfect dining spot, fueled my passion to make Dine Discover better.
+            </div>
+            
+            <div>
+                But our journey doesn't stop here. The experiences I've gained while developing this website have been invaluable, and I look forward to utilizing these skills in improving Dine Discover and developing new websites.
+                We have big plans for the future, and I'm excited to bring them to life.
+            </div>
+            
+            <div>
+                I invite you to be a part of our journey. Together, let's make discovering food an exciting adventure!
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
