@@ -37,10 +37,17 @@ def userprofilePage(request):
     context = {}
     return render(request, "main/userprofile.html", context)
 
+
 def reviewsPage(request):
     context = {}
     return render(request, "main/reviews.html", context)
 
+
 def editprofilePage(request):
     context = {}
     return render(request, "main/editprofile.html", context)
+
+
+def addrestaurantPage(request):
+    context = {}
+    return render(request, "main/addR.html", context)
