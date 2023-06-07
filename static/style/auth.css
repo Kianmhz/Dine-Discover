@@ -2,6 +2,7 @@
 a {
     text-decoration: none;
 }
+
 body {
     font-family: Roboto, Arial;
     padding-top: 70px;
@@ -11,18 +12,22 @@ body {
     align-items: center;
     height: 100vh
 }
+
 .login-form {
     display: flex;
     align-items: center;
     gap: 15px;
     flex-direction: column;
 }
-.login-form p:last-child {
+
+.login-form span {
     font-size: 15px;
 }
+
 .login-form a {
     color: rgba(255, 255, 255, 0.596)
 }
+
 .slider::before {
     content: "";
     width: 100%;
@@ -34,6 +39,7 @@ body {
     background-size: cover;
     filter: blur(3px);
 }
+
 .slider div {
     color: white;
     z-index: 100;
@@ -41,6 +47,7 @@ body {
     text-align: center;
     font-size: 40px;
 }
+
 .slider::after {
     content: "";
     width: 100%;
@@ -50,7 +57,8 @@ body {
     top: 0;
     left: 0;
 }
-.findout-button {
+
+.login-button {
     margin-top: 10px;
     padding:10px 40px;
     background: #5e58f8;
@@ -60,10 +68,12 @@ body {
     cursor: pointer;
     transition: 0.5s;
 }
-.findout-button:active {
+
+.login-button:active {
     background: #3a33ff;
     transition: 0.5s;
 }
+
 .search input {
     width: 350px;
     padding: 10px;
@@ -71,8 +81,8 @@ body {
     border: 1px solid rgb(204, 204, 204);
     border-radius: 2px;
     box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
-    position: relative;
 }
+
 .search input::placeholder {
     color: #989faf;
 }

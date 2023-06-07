@@ -9,17 +9,15 @@
 <body>
     <div class="slider">
         <div class="login-form">
-            <h1>Welcome Back!</h1>
-            <p>Please login to continue</p>
+            <h1>Reset Password</h1>
+            <p>Please enter your username and email to reset your password.</p>
             <div class="search">
                 <input type="text" placeholder="Username" required>
             </div>
             <div class="search">
-                <input type="password" placeholder="Password" required>
+                <input type="email" placeholder="Email" required>
             </div>
-            <button class="login-button">Login</button>
-            <span>Having trouble loging in? <a href="{% url 'passR' %}">Forgot Password</a></span>
-            <span>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></span>
+            <button class="login-button">Reset Password</button>
         </div>
     </div>
 </body>

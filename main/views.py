@@ -18,6 +18,11 @@ def signupPage(request):
     return render(request, "main/signup.html", context)
 
 
+def resetPassPage(request):
+    context = {}
+    return render(request, "main/passReset.html", context)
+
+
 def infoPage(request):
     context = {}
     return render(request, "main/info.html", context)
