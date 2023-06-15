@@ -11,13 +11,16 @@
         <div class="login-form">
             <h1>Welcome Back!</h1>
             <p>Please login to continue</p>
-            <div class="search">
-                <input type="text" placeholder="Username" required>
-            </div>
-            <div class="search">
-                <input type="password" placeholder="Password" required>
-            </div>
-            <button class="login-button">Login</button>
+            <form class="login-form" action="" method="POST">
+                {% csrf_token %}
+                <div class="search">
+                    {{form.username}}
+                </div>
+                <div class="search">
+                    {{form.password}}
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
             <span>Having trouble loging in? <a href="{% url 'passR' %}">Forgot Password</a></span>
             <span>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></span>
         </div>

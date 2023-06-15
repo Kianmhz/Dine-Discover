@@ -1,16 +1,31 @@
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, redirect
+from .forms import LoginForm
 
 # Create your views here.
 
-
 def homePage(request):
-    context = {}
+    user = request.user
+    context = {'user': user}
     return render(request, "main/home.html", context)
 
 
 def loginPage(request):
-    context = {}
-    return render(request, "main/login.html", context)
+    if request.method == 'POST':
+        form = LoginForm(request=request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+    else:
+        form = LoginForm()
+
+    user = request.user
+    context = {'form': form, 'user': user}
+    return render(request, 'main/login.html', context)
 
 
 def signupPage(request):
@@ -56,3 +71,8 @@ def editprofilePage(request):
 def addrestaurantPage(request):
     context = {}
     return render(request, "main/addR.html", context)
+
+
+def logoutUser(request):
+    logout(request)
+    return redirect('home')
