@@ -174,3 +174,8 @@
 .editProfileSubmit:hover {
     background-color: #0056b3;
 }
+
+.name-field {
+    display: flex;
+    justify-content: space-between;
+}

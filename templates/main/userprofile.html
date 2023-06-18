@@ -13,19 +13,17 @@ info page
 <div class="profile">
     <div class="container">
         <div class="profile-avatar">
-            <img src="{% static 'img/rest_1.jpeg' %}" />
+            <img src="{{user.avatar.file.url}}" alt="">
         </div>
         <div class="profile-info">
-            <h3>name</h3>
-            <p>@userID</p>
+            <h3>{{user.first_name}} {{user.last_name}}</h3>
+            <p>@{{user.username}}</p>
             <a href="{% url 'editP' %}"><button class="edit-button">Edit Profile</button></a>
         </div>
         <div class="profile-about">
             <h2>About</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur illo tenetur
-                facilis sunt nemo debitis quisquam hic atque aut? Ducimus alias placeat optio
-                accusamus repudiandae quis ab ex exercitationem rem?
+                {{user.about}}
             </p>
         </div>
     </div>
@@ -33,19 +31,22 @@ info page
 <div class="review-section">
     <div class="container">
         <h2>Recent Reviews</h2>
-        <div class="review">
-            <h3>Restaurant Name 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
-            <a href="#">Read more</a>
-        </div>
-        <div class="review">
-            <h3>Restaurant Name 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
-            <a href="#">Read more</a>
-        </div>
-        <div class="all-reviews-button-div">
-            <a href="{% url 'reviews' %}"><button class="all-reviews-button">See All Reviews</button></a>
-        </div>
+        {% for review in reviews %}
+            <div class="review">
+                <h3>{{ review.restaurant.name }}</h3>
+                <p>{{ review.content|truncatewords:40 }}</p>
+                <a href="{% url 'review_detail' review.id %}">Read more</a>
+            </div>
+        {% empty %}
+            <div class="review">
+                <span>No reviews yet.</span>
+            </div>
+        {% endfor %}
+        {% if reviews|length >= 3 %}
+            <div class="all-reviews-button-div">
+                <a href="{% url 'reviews' %}"><button class="all-reviews-button">See All Reviews</button></a>
+            </div>
+        {% endif %}
     </div>
 </div>
 {% endblock content %}

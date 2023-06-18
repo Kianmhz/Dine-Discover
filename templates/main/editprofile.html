@@ -10,31 +10,37 @@ info page
 {% endblock style %}
 
 {% block content %}
-<div class="profile">
-    <div class="container">
-        <div class="editProfileAvatar">
-            <img src="{% static 'img/rest_1.jpeg' %}" alt="Profile picture">
-        </div>
-        <div class="editSymbol">
-            <img src="{% static 'img/edit-button.png' %}" alt="Edit">
-        </div>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="profile">
+        <div class="container">
+            <div class="editProfileAvatar">
+                <img src="{{user.avatar.file.url}}" alt="">
+            </div>
+            <div class="editSymbol">
+                <img src="{% static 'img/edit-button.png' %}" alt="Edit">
+            </div>
 
-        <div class="editProfileGroup">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="Enter new username">
-        </div>
+            <div class="editProfileGroup">
+                <label for="username">Username:</label>
+                {{ form.username }}
+            </div>
 
-        <div class="editProfileGroup">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter new name">
-        </div>
+            <div class="editProfileGroup">
+                <label for="name">Name:</label>
+                <div class="name-field">
+                    {{ form.first_name }}
+                    {{ form.last_name }}
+                </div>
+            </div>
 
-        <div class="editProfileGroup">
-            <label for="about">About:</label>
-            <textarea id="about" name="about" rows="4" placeholder="Tell us more about yourself"></textarea>
-        </div>
+            <div class="editProfileGroup">
+                <label for="about">About:</label>
+                {{ form.about }}
+            </div>
 
-        <button class="editProfileSubmit">Update Profile</button>
+            <button type="submit" class="editProfileSubmit">Update Profile</button>
+        </div>
     </div>
-</div>
+</form>
 {% endblock content %}

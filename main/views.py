@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
-from .forms import LoginForm
+from .forms import *
 
 # Create your views here.
 
@@ -54,7 +54,8 @@ def contactPage(request):
 
 
 def userprofilePage(request):
-    context = {}
+    user = request.user
+    context = {'user': user}
     return render(request, "main/userprofile.html", context)
 
 
@@ -64,8 +65,14 @@ def reviewsPage(request):
 
 
 def editprofilePage(request):
-    context = {}
-    return render(request, "main/editprofile.html", context)
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = UserUpdateForm(instance=request.user)
+    return render(request, 'main/editprofile.html', {'form': form})
 
 
 def addrestaurantPage(request):

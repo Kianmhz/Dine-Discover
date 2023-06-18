@@ -12,32 +12,18 @@ info page
 {% block content %}
 <div class="review-section">
     <div class="container">
-        <h2>userID Reviews</h2>
-        <div class="review">
-            <h3>Restaurant Name 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
-            <a href="#">Read more</a>
-        </div>
-        <div class="review">
-            <h3>Restaurant Name 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
-            <a href="#">Read more</a>
-        </div>
-        <div class="review">
-            <h3>Restaurant Name 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
-            <a href="#">Read more</a>
-        </div>
-        <div class="review">
-            <h3>Restaurant Name 4</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
-            <a href="#">Read more</a>
-        </div>
-        <div class="review">
-            <h3>Restaurant Name 5</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis...</p>
-            <a href="#">Read more</a>
-        </div>
+        <h2>{{user.username}} Reviews</h2>
+        {% for review in reviews %}
+            <div class="review">
+                <h3>{{ review.restaurant.name }}</h3>
+                <p>{{ review.content|truncatewords:40 }}</p>
+                <a href="{% url 'review_detail' review.id %}">Read more</a>
+            </div>
+        {% empty %}
+            <div class="review">
+                <span>No reviews yet.</span>
+            </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}
