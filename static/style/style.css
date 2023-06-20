@@ -3,6 +3,9 @@ a {
     text-decoration: none;
 }
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: Roboto, Arial;
     padding-top: 70px;
     background: #edf1fc;
@@ -163,6 +166,7 @@ header .container {
     gap: 40px;
 }
 footer {
+    margin-top: auto;
     width: 100%;
     background: white;
 }

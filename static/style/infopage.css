@@ -97,6 +97,7 @@
 .tab-button.active::after {
     transform: translateX(-50%) scaleX(1);
 }
+
 /* Add Review Form */
 .info .reviews-section .review-form {
     display: flex;
