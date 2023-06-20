@@ -44,16 +44,6 @@ header .container {
     align-items: center;
     font-weight: bold;
 }
-
-.joinus-button {
-    padding:10px 40px;
-    background: white;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(204, 204, 204);
-    cursor: pointer;
-    transition: 0.5s;
-}
 .logo {
     background: #5e58f8;
     color: white;
@@ -77,6 +67,15 @@ header .container {
     border-bottom: 20px solid transparent;
     transform: rotate(90deg);
     position: absolute;
+}
+.joinus-button {
+    padding:10px 40px;
+    background: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    cursor: pointer;
+    transition: 0.5s;
 }
 .joinus-button:hover {
     background-color: #f8f8f8;

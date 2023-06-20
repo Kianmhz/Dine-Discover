@@ -46,7 +46,8 @@ def resetPassPage(request):
 
 
 def infoPage(request):
-    context = {}
+    user = request.user
+    context = {'user': user}
     return render(request, "main/info.html", context)
 
 

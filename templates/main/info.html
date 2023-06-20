@@ -20,12 +20,12 @@ info page
     </div>
     <div class="tab">
         <div class="container">
-            <button class="tab-button active">About</button>
-            <button class="tab-button">Menu</button>
-            <button class="tab-button">Pictures</button>
+            <button class="tab-button active" onclick="changeTab('about')">About</button>
+            <button class="tab-button" onclick="changeTab('pictures')">Pictures</button>
+            <button class="tab-button" onclick="changeTab('reviews')">Reviews</button>
         </div>
     </div>
-    <div class="info">
+    <div id="about" class="info">
         <div class="container">
             <h2>About Restaurant</h2>
             <div class="restaurant-description">
@@ -55,9 +55,9 @@ info page
                         <p>The ambiance of the restaurant was great, but I found the food to be average. The prices were a bit high considering the portion sizes. Overall, it was an okay experience.</p>
                     </div>
                 </div>
-                
+                {% if user.is_authenticated %}
                 <div class="add-review">
-                    <h3>Add your review</h3>
+                    <h2>Add your review</h2>
                     <form class="review-form">
                         <input type="text" name="review-author" placeholder="Your Name" required>
                         <select name="review-rating" required>
@@ -70,9 +70,69 @@ info page
                         </select>
                         <textarea name="review-content" placeholder="Write your review here..." required></textarea>
                         <button type="submit" class="submit-review">Submit Review</button>
+                    {% endif %}
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <div id="pictures" class="info" style="display: none;">
+        <div class="container">
+        </div>
+    </div>
+    <div id="reviews" class="info" style="display: none;">
+        <div class="container">
+            <div class="reviews-section">
+                <div class="review">
+                    <div class="review-author">John Doe</div>
+                    <div class="review-date">March 7, 2023</div>
+                    <div class="review-rating">★★★★★</div>
+                    <div class="review-content">
+                        <p>This restaurant exceeded my expectations! The food was delicious and the service was impeccable. I highly recommend trying their signature dishes.</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="review-author">Jane Smith</div>
+                    <div class="review-date">February 21, 2023</div>
+                    <div class="review-rating">★★★☆☆</div>
+                    <div class="review-content">
+                        <p>The ambiance of the restaurant was great, but I found the food to be average. The prices were a bit high considering the portion sizes. Overall, it was an okay experience.</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="review-author">John Doe</div>
+                    <div class="review-date">March 7, 2023</div>
+                    <div class="review-rating">★★★★★</div>
+                    <div class="review-content">
+                        <p>This restaurant exceeded my expectations! The food was delicious and the service was impeccable. I highly recommend trying their signature dishes.</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <div class="review-author">Jane Smith</div>
+                    <div class="review-date">February 21, 2023</div>
+                    <div class="review-rating">★★★☆☆</div>
+                    <div class="review-content">
+                        <p>The ambiance of the restaurant was great, but I found the food to be average. The prices were a bit high considering the portion sizes. Overall, it was an okay experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeTab(tabName) {
+            var infoElements = document.getElementsByClassName('info');
+            for (var i = 0; i < infoElements.length; i++) {
+                infoElements[i].style.display = "none";
+            }
+        
+            var tabButtons = document.getElementsByClassName('tab-button');
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+        
+            document.getElementById(tabName).style.display = "flex";
+            event.currentTarget.classList.add("active");
+        }
+        </script>
 {% endblock content %}
