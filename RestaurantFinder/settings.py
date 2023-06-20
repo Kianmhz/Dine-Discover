@@ -50,6 +50,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "main.middleware.PreventAuthenticatedAccessMiddleware",
+    "main.middleware.PreventUnAuthenticatedAccessMiddleware"
 ]
 
 ROOT_URLCONF = "RestaurantFinder.urls"
