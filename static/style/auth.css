@@ -86,3 +86,13 @@ body {
 .search input::placeholder {
     color: #989faf;
 }
+
+.name-field{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.name-field input {
+    width: 170px;
+}

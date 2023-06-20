@@ -29,7 +29,14 @@ def loginPage(request):
 
 
 def signupPage(request):
-    context = {}
+    form = SignupForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = SignupForm()
+    context = {'form': form}
     return render(request, "main/signup.html", context)
 
 

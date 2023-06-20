@@ -6,9 +6,15 @@ main page
 {% endblock title %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <div class="slider">
     <div>Welcome back,<br><strong>{{user.first_name}}</strong><br></div>
 </div>
+{% else %}
+<div class="slider">
+    <div>Find the best restaurants,<br>cafes, and bars in<br><strong>London</strong></div>
+</div>
+{% endif %}
 <div class="search">
     <div class="container">
         <input class="location-search-bar" type="text" placeholder="Canary, Wharf, London">
