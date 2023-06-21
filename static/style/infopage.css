@@ -8,14 +8,15 @@
     padding: 20px;
 }
 .info h2 {
-    color: #333;
+    color: var(--third-color);
     margin-top: 10px;
+    transition: 0.3s;
 }
 
 /* Restaurant description & location */
 .info .restaurant-description p,
 .info .restaurant-location p {
-    color: #666;
+    color: #818994;
     line-height: 1.5;
     padding: 10px;
 }
@@ -30,11 +31,12 @@
 
 .info .reviews-section .review-author {
     font-weight: bold;
-    color: #333;
+    color: var(--third-color);
+    transition: 0.3s;
 }
 
 .info .reviews-section .review-date {
-    color: #999;
+    color: #989faf;
     font-size: 0.8em;
 }
 
@@ -44,14 +46,16 @@
 }
 
 .info .reviews-section .review-content p {
-    color: #666;
+    color: #818994;
     line-height: 1.5;
 }
 
 .tab {
     display: flex;
     justify-content: center;
-    background: white;
+    background-color: var(--sec-color);
+    transition: 0.3s;
+    z-index: 99;
 }
 
 .tab .container {
@@ -60,9 +64,9 @@
 }
 
 .tab-button {
-    background: white;
+    background-color: var(--sec-color);
     padding: 30px 170px;
-    color: black;
+    color: var(--third-color);
     border: none;
     cursor: pointer;
     font-size: 16px;
@@ -77,7 +81,7 @@
     display: block;
     height: 3px;
     width: 100%;
-    background: black;
+    background-color: var(--third-color);
     transition: all 0.3s ease-in-out;
     position: absolute;
     bottom: 0;
@@ -87,11 +91,12 @@
 
 .tab-button:hover {
     transition: 0.3s;
-    background: #f8f8f8;
+    background: #c9c9c940;
 }
 
 .tab-button.active {
-    color: black;
+    color: var(--third-color);
+    transition: 0.3s;
 }
 
 .tab-button.active::after {
@@ -115,6 +120,15 @@
     border: none;
     border-radius: 5px;
     outline: none;
+    color: #818994;
+    background-color: var(--sec-color);
+    transition: 0.3s;
+}
+
+.info .reviews-section .review-form input::placeholder, 
+.info .reviews-section .review-form textarea::placeholder {
+    color: #818994;
+    transition: 0.3s;
 }
 
 .info .reviews-section .review-form button.submit-review {

@@ -19,3 +19,21 @@
     {% include './footer.html' %}
 </body>
 </html>
+
+<script>
+    let boolFunction = false;
+    function toggleMenu() {
+        if (boolFunction != true) {
+            let root = document.documentElement;
+            root.style.setProperty('--main-color', '#393E46');
+            root.style.setProperty('--sec-color', '#222831');
+            root.style.setProperty('--third-color', '#ffffff');
+        } else {
+            let root = document.documentElement;
+            root.style.setProperty('--main-color', '#edf1fc');
+            root.style.setProperty('--sec-color', '#FFFFFF');
+            root.style.setProperty('--third-color', '#000000');
+        }
+        boolFunction = !boolFunction;
+    }
+</script>

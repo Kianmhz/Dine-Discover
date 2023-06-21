@@ -21,24 +21,39 @@
     margin-top: 10px;
 }
 
-.profile-about div{
+.profile-info p {
+    color: #818994;
+    margin-bottom: 20px;
+}
+
+.profile-about div {
+    color: var(--third-color);
     line-height: 1.5;
     margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.profile-about p {
+    color: var(--third-color);
+    transition: 0.3s;
+}
+
+.profile-about a {
+    color: #818994;
+    transition: 0.3s;
 }
 
 .profile-about h2{
+    color: var(--third-color);
     padding: 20px 0px;
     text-align: center;
+    transition: 0.3s;
 }
 
 .profile-info h3, .profile-about h3 {
-    color: #333;
+    color: var(--third-color);
     margin-bottom: 10px;
-}
-
-.profile-info p {
-    color: #777;
-    margin-bottom: 20px;
+    transition: 0.3s;
 }
 
 .edit-button {
@@ -59,20 +74,22 @@
 }
 
 .review-section h2 {
-    color: #333;
+    color: var(--third-color);
     font-size: 32px;
     margin: 20px 0px;
     text-align: center;
+    transition: 0.3s;
 }
 
 .review-section .review {
-    background-color: #fff;
+    background-color: var(--sec-color);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    transition: 0.3s;
 }
 
 .review-section .review h3 {
@@ -88,6 +105,12 @@
     margin-bottom: 10px;
 }
 
+.review-section .review span {
+    color: var(--third-color);
+    transition: 0.3s;
+}
+
+
 .review-section .review a {
     color: #007BFF;
     text-decoration: none;
@@ -102,7 +125,7 @@
 }
 
 .all-reviews-button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -145,14 +168,24 @@
 .editProfileGroup label {
     margin-bottom: 5px;
     font-weight: 500;
+    color: var(--third-color);
+    transition: 0.3s;
 }
 
 .editProfileGroup input, textarea {
     padding: 10px;
+    color: var(--third-color);
+    background-color: var(--sec-color);
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     outline: none;
+    transition: 0.3s;
+}
+
+.editProfileGroup input::placeholder {
+    color: var(--third-color);
+    transition: 0.3s;
 }
 
 .editProfileSubmit {
@@ -162,7 +195,7 @@
     border-radius: 5px;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.3s;
     margin-bottom: 20px;
 }
 
