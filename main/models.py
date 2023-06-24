@@ -30,9 +30,3 @@ class Review(models.Model):
     rating = models.FloatField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
-
-
-class FoodMenu(models.Model):
-    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
-    price = models.FloatField()
