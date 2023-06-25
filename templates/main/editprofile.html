@@ -15,10 +15,11 @@ info page
     <div class="profile">
         <div class="container">
             <div class="editProfileAvatar">
-                <img src="{{user.avatar.file.url}}" alt="">
-            </div>
-            <div class="editSymbol">
-                <img src="{% static 'img/edit-button.png' %}" alt="Edit">
+                <label class="edit-label" for="file">
+                  <span>Change Image</span>
+                </label>
+                <input id="file" type="file" onchange="loadFile(event)"/>
+                <img src="{{user.avatar.file.url}}" id="output" width="200" alt="" />
             </div>
 
             <div class="editProfileGroup">

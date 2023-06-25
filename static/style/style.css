@@ -4,6 +4,10 @@
     --sec-color: #ffffffff;
     --third-color: #000000;
 }
+.no-transition * {
+    transition: none !important;
+    animation: none !important;
+}
 .darkmode label {
     width: 75px;
     height: 30px;
