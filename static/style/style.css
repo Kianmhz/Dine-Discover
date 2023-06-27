@@ -1,8 +1,13 @@
 *{padding: 0; margin: 0; box-sizing: border-box;}
-:root {
+.light-theme {
     --main-color: #edf1fc;
-    --sec-color: #ffffffff;
+    --sec-color: #FFFFFF;
     --third-color: #000000;
+}
+.dark-theme {
+    --main-color: #393E46;
+    --sec-color: #222831;
+    --third-color: #ffffff;
 }
 .no-transition * {
     transition: none !important;
