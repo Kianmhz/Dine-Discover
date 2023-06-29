@@ -4,14 +4,14 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class Media(models.Model):
-    file = models.FileField("", max_length=100)
+    file = models.ImageField(upload_to='media/')
 
 
 class User(AbstractUser):
     email = models.EmailField("Email", max_length=150, unique=True)
     username = models.CharField("Username", max_length=20, unique=True)
     about = models.TextField(null=True, blank=True)
-    avatar = models.ForeignKey(Media, on_delete=models.DO_NOTHING, null=True)
+    avatar = models.ForeignKey(Media, on_delete=models.DO_NOTHING, null=True, blank=True)
     date_joined = models.DateField("Date Joined", auto_now_add=True)
 
 

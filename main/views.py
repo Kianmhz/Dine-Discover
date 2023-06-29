@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from .forms import *
+from .models import Media
 
 # Create your views here.
 
@@ -11,6 +12,7 @@ def homePage(request):
 
 
 def loginPage(request):
+    user = request.user
     if request.method == 'POST':
         form = LoginForm(request=request, data=request.POST)
         if form.is_valid():
@@ -23,7 +25,6 @@ def loginPage(request):
     else:
         form = LoginForm()
 
-    user = request.user
     context = {'form': form, 'user': user}
     return render(request, 'main/login.html', context)
 
@@ -76,8 +77,20 @@ def editprofilePage(request):
     if request.method == 'POST':
         form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
-            form.save()
+            user = form.save(commit=False) # Don't save the User instance yet
+
+            # Save the uploaded image in Media model
+            if 'avatar' in request.FILES:  # Check if avatar is being updated
+                avatar = Media(file=request.FILES['avatar'])
+                avatar.save()
+
+                # Associate the User instance with the Media instance
+                user.avatar = avatar
+                user.save()
             return redirect('profile')
+        else:
+            # If the form is not valid, print out the form errors
+            print(form.errors)
     else:
         form = UserUpdateForm(instance=request.user)
     return render(request, 'main/editprofile.html', {'form': form})

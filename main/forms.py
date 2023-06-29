@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import get_user_model
+from .models import Media
 
 User = get_user_model()
 class LoginForm(AuthenticationForm):
@@ -8,6 +9,7 @@ class LoginForm(AuthenticationForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'search', 'placeholder':'Password'}))
 
 class UserUpdateForm(forms.ModelForm):
+    avatar = forms.ImageField(required=False)
     class Meta:
         model = User
         fields = ['username', 'about', 'first_name', 'last_name']

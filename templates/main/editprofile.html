@@ -15,11 +15,11 @@ info page
     <div class="profile">
         <div class="container">
             <div class="editProfileAvatar">
-                <label class="edit-label" for="file">
+                <label class="edit-label" for="id_avatar">
                   <span>Change Image</span>
                 </label>
-                <input id="file" type="file" onchange="loadFile(event)"/>
-                <img src="{{user.avatar.file.url}}" id="output" width="200" alt="" />
+                {{ form.avatar }}
+                <img src="{{ user.avatar.file.url|default:'../static/img/user.png' }}" id="output"/>
             </div>
 
             <div class="editProfileGroup">
@@ -39,9 +39,28 @@ info page
                 <label for="about">About:</label>
                 {{ form.about }}
             </div>
-
             <button type="submit" class="editProfileSubmit">Update Profile</button>
         </div>
     </div>
 </form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function readURL(input) {
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+        
+            reader.onload = function(e) {
+              document.getElementById('output').src = e.target.result;
+            }
+      
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+      
+        document.getElementById('id_avatar').addEventListener('change', function() {
+          readURL(this);
+        });
+      });
+</script>
 {% endblock content %}
