@@ -96,11 +96,6 @@ def editprofilePage(request):
     return render(request, 'main/editprofile.html', {'form': form})
 
 
-def addrestaurantPage(request):
-    context = {}
-    return render(request, "main/addR.html", context)
-
-
 def logoutUser(request):
     logout(request)
     return redirect('home')

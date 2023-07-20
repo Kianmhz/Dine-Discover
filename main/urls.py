@@ -15,7 +15,6 @@ urlpatterns = [
     path("userprofile/", views.userprofilePage, name='profile'),
     path("reviews/", views.reviewsPage, name='reviews'),
     path("editprofile/", views.editprofilePage, name='editP'),
-    path("addrestaurant/", views.addrestaurantPage, name='addR'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
