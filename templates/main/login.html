@@ -9,8 +9,8 @@
 <body>
     <div class="slider">
         <div class="login-form">
-            <h1>Welcome Back!</h1>
-            <p>Please login to continue</p>
+            <h1 id="welcome-text" style="opacity: 0%">Welcome Back!</h1>
+            <p id="login-text" style="opacity: 0%">Please login to continue</p>
             <form class="login-form" action="" method="POST">
                 {% csrf_token %}
                 <div class="search">
@@ -27,3 +27,17 @@
     </div>
 </body>
 </html>
+
+<script>
+    window.onload = function() {
+        var welcomeText = document.getElementById('welcome-text');
+        welcomeText.style.opacity = "100%";
+        welcomeText.classList.add('typing-effect');
+    
+        setTimeout(function() {
+            var loginText = document.getElementById('login-text');
+            loginText.style.opacity = "100%";
+            loginText.classList.add('typing-effect');
+        }, 3000);  // After 3500ms, show 'login-text' and add 'typing-effect'
+    }
+</script>

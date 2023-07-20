@@ -1,4 +1,25 @@
 *{padding: 0; margin: 0; box-sizing: border-box;}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+.typing-effect {
+  overflow: hidden;
+  border-right: 3px solid transparent;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: 
+    typing 3s steps(40, end),
+    blink .75s step-end 3.5;
+}
+
 a {
     text-decoration: none;
 }
@@ -80,11 +101,24 @@ body {
     font-size: 16px;
     border: 1px solid rgb(204, 204, 204);
     border-radius: 2px;
-    box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 0 rgba(113, 158, 206, 0);
+    transition: box-shadow 0.5s ease;
+}
+
+.search input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #719ECE;
 }
 
 .search input::placeholder {
     color: #989faf;
+    transition: 0.5s;
+}
+
+.search input:focus::placeholder {
+    transition: 0.5s;
+    color: transparent;
+    font-size: 12px;
 }
 
 .name-field{
