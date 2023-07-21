@@ -41,11 +41,6 @@ def signupPage(request):
     return render(request, "main/signup.html", context)
 
 
-def resetPassPage(request):
-    context = {}
-    return render(request, "main/passReset.html", context)
-
-
 def infoPage(request):
     user = request.user
     context = {'user': user}
@@ -77,7 +72,7 @@ def editprofilePage(request):
     if request.method == 'POST':
         form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
-            user = form.save(commit=False) # Don't save the User instance yet
+            user = form.save(commit=False)  # Don't save the User instance yet
 
             # Save the uploaded image in Media model
             if 'avatar' in request.FILES:  # Check if avatar is being updated
@@ -86,7 +81,9 @@ def editprofilePage(request):
 
                 # Associate the User instance with the Media instance
                 user.avatar = avatar
-                user.save()
+
+            # Save user after the updates
+            user.save()
             return redirect('profile')
         else:
             # If the form is not valid, print out the form errors

@@ -8,14 +8,18 @@
 </head>
 <body>
     <div class="slider">
-        <div class="login-form">
+        <div class="login-form" method="POST">
+            {% csrf_token %}
             <h1>Reset Password</h1>
             <p>Please enter your username and email to reset your password.</p>
             <div class="search">
-                <input type="text" placeholder="Username" required>
+                {{ form.username }}
             </div>
             <div class="search">
-                <input type="email" placeholder="Email" required>
+                {{ form.email }}
+            </div>
+            <div class="search">
+                {{ form.password}}
             </div>
             <button class="login-button">Reset Password</button>
         </div>

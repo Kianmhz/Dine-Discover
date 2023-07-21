@@ -32,3 +32,13 @@ class SignupForm(UserCreationForm):
             'password1': forms.PasswordInput(attrs={'class':'search', 'placeholder':'Password'}),
             'password2': forms.PasswordInput(attrs={'class':'search', 'placeholder':'Confirm Password'}),
         }
+
+class ResetPassForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password']
+        widgets = {
+            'username': forms.TextInput(attrs={'class':'search', 'placeholder':'Username'}),
+            'email': forms.EmailInput(attrs={'class':'search', 'placeholder':'Email'}),
+            'password': forms.PasswordInput(attrs={'class':'search', 'placeholder':'New Password'}),
+        }

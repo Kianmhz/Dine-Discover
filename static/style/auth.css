@@ -107,7 +107,7 @@ body {
 
 .search input:focus {
     outline: none;
-    box-shadow: 0 0 10px #719ECE;
+    box-shadow: 0 0 10px #ff007b;
 }
 
 .search input::placeholder {

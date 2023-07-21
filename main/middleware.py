@@ -6,7 +6,7 @@ class PreventAuthenticatedAccessMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        disallowed_urls = [reverse('login'), reverse('signup'), reverse('passR')]
+        disallowed_urls = [reverse('login'), reverse('signup')]
 
         if request.user.is_authenticated and request.path in disallowed_urls:
             return redirect('home')
