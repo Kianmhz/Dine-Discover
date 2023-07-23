@@ -199,19 +199,40 @@ header .container {
     left: 0;
 }
 .findout-button {
-    padding:10px 40px;
-    background: #5e58f8;
-    border: none;
-    color: white;
-    border-radius: 3px;
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 25px;
+    background: transparent;
     cursor: pointer;
-    transition: 0.5s;
-}
-.findout-button:active {
-    background: #3a33ff;
-    transition: 0.5s;
-}
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .findout-button:after {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1fd1f9;
+    background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+    transition: all 0.3s ease;
+  }
+  .findout-button:hover:after {
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+  }
 .search {
+    z-index: 0;
     padding:20px 0px;
     display: flex;
     justify-content: center;
@@ -219,6 +240,7 @@ header .container {
     transition: 0.5s;
 }
 .search input {
+    color: var(--third-color);
     transition: 0.5s;
     flex: 1;
     padding: 10px;
@@ -380,7 +402,6 @@ footer .main-footer .container > div a {
     border: none;
     padding-left: 0;
 }
-
 .joinus-button {
     padding:10px 40px;
     color: var(--third-color);
@@ -396,7 +417,6 @@ footer .main-footer .container > div a {
     outline: none;
     border: none;
 }
-
 .joinus-button:after {
     position: absolute;
     content: "";
@@ -412,13 +432,11 @@ footer .main-footer .container > div a {
     0px 0px 10px 0px #00000096;
     transition: all 0.3s ease;
 } 
-
 .joinus-button:hover {
     color: var(--third-color);
     background: transparent;
     transition: 0.5s;
 }
-
 .joinus-button:hover:after {
     left: auto;
     right: 0;

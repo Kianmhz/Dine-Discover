@@ -18,7 +18,8 @@ info page
         <div class="profile-info">
             <h3>{{user.first_name}} {{user.last_name}}</h3>
             <p>@{{user.username}}</p>
-            <a href="{% url 'editP' %}"><button class="edit-button">Edit Profile</button></a>
+            <p>Date joined: {{user.date_joined}}</p>
+            <a href="{% url 'editP' %}"><button class="edit-button"><span>Edit Profile</span></button></a>
         </div>
         <div class="profile-about">
             <h2>About</h2>
