@@ -104,16 +104,16 @@
 }
 
 /* Add Review Form */
-.info .reviews-section .review-form {
+.review-form {
     display: flex;
     flex-direction: column;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.info .reviews-section .review-form input, 
-.info .reviews-section .review-form select, 
-.info .reviews-section .review-form textarea {
+.review-form input, 
+.review-form select, 
+.review-form textarea {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 1rem;
@@ -125,8 +125,8 @@
     transition: 0.3s;
 }
 
-.info .reviews-section .review-form input::placeholder, 
-.info .reviews-section .review-form textarea::placeholder {
+.review-form input::placeholder, 
+.review-form textarea::placeholder {
     color: #818994;
     transition: 0.3s;
 }
@@ -163,7 +163,7 @@
     box-shadow:
         7px 7px 20px 0px #0003,
         4px 4px 5px 0px #0002;
-    transition:800ms ease all;
+    transition:400ms ease all;
 }
 .submit-review:after{
     right:inherit;

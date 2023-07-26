@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import get_user_model
-from .models import Media
+from .models import *
 
 User = get_user_model()
 class LoginForm(AuthenticationForm):
@@ -41,4 +41,12 @@ class ResetPassForm(forms.ModelForm):
             'username': forms.TextInput(attrs={'class':'search', 'placeholder':'Username'}),
             'email': forms.EmailInput(attrs={'class':'search', 'placeholder':'Email'}),
             'password': forms.PasswordInput(attrs={'class':'search', 'placeholder':'New Password'}),
+        }
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['content', 'rating']
+        widgets = {
+            'content': forms.Textarea(attrs={'class':'form-input', 'placeholder':'Write your review here...'}),
         }

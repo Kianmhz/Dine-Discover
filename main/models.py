@@ -25,8 +25,16 @@ class Restaurant(models.Model):
 
 
 class Review(models.Model):
+    RATING_CHOICES = [
+        (1.0, '★☆☆☆☆'),
+        (2.0, '★★☆☆☆'),
+        (3.0, '★★★☆☆'),
+        (4.0, '★★★★☆'),
+        (5.0, '★★★★★'),
+    ]
+
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     content = models.TextField()
-    rating = models.FloatField()
+    rating = models.FloatField(choices=RATING_CHOICES)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)

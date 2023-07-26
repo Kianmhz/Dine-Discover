@@ -58,20 +58,13 @@ info page
                 {% if user.is_authenticated %}
                 <div class="add-review">
                     <h2>Add your review</h2>
-                    <form class="review-form">
-                        <input type="text" name="review-author" placeholder="Your Name" required>
-                        <select name="review-rating" required>
-                            <option value="">Rating (1-5)</option>
-                            <option value="1">★☆☆☆☆</option>
-                            <option value="2">★★☆☆☆</option>
-                            <option value="3">★★★☆☆</option>
-                            <option value="4">★★★★☆</option>
-                            <option value="5">★★★★★</option>
-                        </select>
-                        <textarea name="review-content" placeholder="Write your review here..." required></textarea>
+                    <form method="POST" class="review-form">
+                        {% csrf_token %}
+                        {{ form.rating }}
+                        {{ form.content }}
                         <button type="submit" class="submit-review">Submit Review</button>
-                    {% endif %}
                     </form>
+                    {% endif %}
                 </div>
             </div>
         </div>
