@@ -90,4 +90,4 @@ db.sqlite3
 Pipfile
 .vscode/
 
-secrets.json
+media

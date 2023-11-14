@@ -5,10 +5,20 @@ from .models import Media
 
 # Create your views here.
 
+
 def homePage(request):
     user = request.user
     context = {'user': user}
     return render(request, "main/home.html", context)
+
+
+def loginRegisterPage(request):
+    user = request.user
+    login_form = LoginForm()
+    register_form = form = SignupForm()
+    context = {'login_form': login_form,
+               'register_form': register_form, 'user': user}
+    return render(request, 'main/login_register.html', context)
 
 
 def loginPage(request):
@@ -22,23 +32,26 @@ def loginPage(request):
             if user is not None:
                 login(request, user)
                 return redirect('home')
+            else:
+                return redirect('login_register')
+        else:
+            print(form.errors)
+            return redirect('home')
     else:
-        form = LoginForm()
-
-    context = {'form': form, 'user': user}
-    return render(request, 'main/login.html', context)
+        return redirect('login_register')
 
 
 def signupPage(request):
-    form = SignupForm(request.POST)
     if request.method == 'POST':
+        form = SignupForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+        else:
+            return redirect('login_register')
     else:
-        form = SignupForm()
-    context = {'form': form}
-    return render(request, "main/signup.html", context)
+        return redirect('home')
 
 
 def infoPage(request):
@@ -70,7 +83,8 @@ def reviewsPage(request):
 
 def editprofilePage(request):
     if request.method == 'POST':
-        form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
+        form = UserUpdateForm(request.POST, request.FILES,
+                              instance=request.user)
         if form.is_valid():
             user = form.save(commit=False)  # Don't save the User instance yet
 
