@@ -103,3 +103,4 @@ def editprofilePage(request):
 def logoutUser(request):
     logout(request)
     return redirect('home')
+ 

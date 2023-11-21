@@ -1,117 +1,111 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'style/auth.css' %}"/>
-    <script src="https://kit.fontawesome.com/bc8482cdd5.js" crossorigin="anonymous"></script>
-  </head>
+{% extends './user_auth_base.html' %}
 
-  <body class="slider">
-    <div class="container" id="container">
-      <div class="form-container sign-up-container">
-        <form action="{% url 'signup' %}" method="POST">
-          {% csrf_token %}
-          <h1>Welcome to Dine Discover</h1>
-          <div>
-            <div class="name-field">
-              <fieldset>
-                <input id="{{register_form.first_name.name}}" type="{{register_form.first_name.type}}" name={{register_form.first_name.name}} required/>
-                <label class="blue-h" for="{{register_form.first_name.name}}">{{register_form.first_name.label}}</label>
-                <div class="after-blue"></div>
-              </fieldset>
-              <fieldset>
-                <input id="{{register_form.last_name.name}}" type="{{register_form.last_name.type}}" name={{register_form.last_name.name}} required/>
-                <label class="blue-h" for="{{register_form.last_name.name}}">{{register_form.last_name.label}}</label>
-                <div class="after-blue"></div>
-              </fieldset>
-            </div>
-            {% for field in register_form %} 
-            {% if field.label != 'First name' and field.label != 'Last name' %}
-            <div class="customForm">
-              <fieldset>
-                <input id="{{field.name}}" type="{{field.field.widget.input_type}}" name={{field.name}} required/>
-                <label class="blue-h" for="{{field.name}}">{{field.label}}</label>
-                <div class="after-blue"></div>
-                {% if field.name == 'password1' %}
-                <div class="toggleVisBtn" onclick="togglePasswordVisibility('password1')"><i class="fa-solid fa-eye"></i></div>
-                {% elif field.name == 'password2' %}
-                <div class="toggleVisBtn" onclick="togglePasswordVisibility('password2')"><i class="fa-solid fa-eye"></i></div>
-                {% endif %}
-              </fieldset>
-            </div>
-            {% endif %} 
-            {% endfor%}
+{%block content%}
+<div class="form-container sign-up-container">
+    <form action="{% url 'signup' %}" method="POST">
+      {% csrf_token %}
+      <h1>Welcome to Dine Discover</h1>
+      <div>
+        <div class="name-field">
+          <fieldset>
+            <input id="{{register_form.first_name.name}}" type="{{register_form.first_name.type}}" name={{register_form.first_name.name}} required/>
+            <label class="blue-h" for="{{register_form.first_name.name}}">{{register_form.first_name.label}}</label>
+            <div class="after-blue"></div>
+          </fieldset>
+          <fieldset>
+            <input id="{{register_form.last_name.name}}" type="{{register_form.last_name.type}}" name={{register_form.last_name.name}} required/>
+            <label class="blue-h" for="{{register_form.last_name.name}}">{{register_form.last_name.label}}</label>
+            <div class="after-blue"></div>
+          </fieldset>
+        </div>
+        {% for field in register_form %} 
+        {% if field.label != 'First name' and field.label != 'Last name' %}
+        <div class="customForm">
+          <fieldset>
+            <input id="{{field.name}}" type="{{field.field.widget.input_type}}" name={{field.name}} required/>
+            <label class="blue-h" for="{{field.name}}">{{field.label}}</label>
+            <div class="after-blue"></div>
+            {% if field.name == 'password1' %}
+            <div class="toggleVisBtn" onclick="togglePasswordVisibility('password1')"><i class="fa-solid fa-eye"></i></div>
+            {% elif field.name == 'password2' %}
+            <div class="toggleVisBtn" onclick="togglePasswordVisibility('password2')"><i class="fa-solid fa-eye"></i></div>
+            {% endif %}
+          </fieldset>
+        </div>
+        {% endif %} 
+        {% endfor%}
 
-            <button type="submit" style="background: #1fd1f9">Sign Up</button>
-        </div>
-        </form>
+        <button type="submit" style="background: #1fd1f9">Sign Up</button>
+    </div>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form action="{% url 'login' %}" method="POST">
+      {% csrf_token %}
+      <h1>Sign in</h1>
+      {% for field in login_form %}
+      <div class="customForm">
+        <fieldset>
+          <input id="{{field.name}}" type="{{field.field.widget.input_type}}" name={{field.name}} required/>
+          <label class="purple-h" for="{{field.name}}">{{field.label}}</label>
+          <div class="after-purple"></div>
+          {% if field.name == 'password' %}
+          <div class="toggleVisBtn" onclick="togglePasswordVisibility('password')"><i class="fa-solid fa-eye"></i></div>
+          {% endif %}
+        </fieldset>
       </div>
-      <div class="form-container sign-in-container">
-        <form action="{% url 'login' %}" method="POST">
-          {% csrf_token %}
-          <h1>Sign in</h1>
-          {% for field in login_form %}
-          <div class="customForm">
-            <fieldset>
-              <input id="{{field.name}}" type="{{field.field.widget.input_type}}" name={{field.name}} required/>
-              <label class="purple-h" for="{{field.name}}">{{field.label}}</label>
-              <div class="after-purple"></div>
-              {% if field.name == 'password' %}
-              <div class="toggleVisBtn" onclick="togglePasswordVisibility('password')"><i class="fa-solid fa-eye"></i></div>
-              {% endif %}
-            </fieldset>
-          </div>
-          {% endfor%}
-          <a href="{% url 'password_reset' %}">Forgot your password?</a>
-          <button type="submit" style="background:#b621fe">Sign In</button>
-        </form>
+      {% endfor%}
+      <a href="{% url 'password_reset' %}">Forgot your password?</a>
+      <button type="submit" style="background:#b621fe">Sign In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome Back!</h1>
+        <p>
+          Log in to continue exploring
+        </p>
+        <button class="ghost" id="signIn">Sign In</button>
       </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
-            <p>
-              Log in to continue exploring
-            </p>
-            <button class="ghost" id="signIn">Sign In</button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <h1>Hi There!</h1>
-            <p>We can't wait to share this experience with you</p>
-            <button class="ghost" id="signUp">Sign Up</button>
-          </div>
-        </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hi There!</h1>
+        <p>We can't wait to share this experience with you</p>
+        <button class="ghost" id="signUp">Sign Up</button>
       </div>
     </div>
-  </body>
-  <script>
+  </div>
+{%endblock content%}
+
+{% block js %}
+<script>
     const signUpButton = document.getElementById("signUp");
     const signInButton = document.getElementById("signIn");
     const container = document.getElementById("container");
     const visBtn = document.getElementsByClassName("toggleVisBtn");
 
     signUpButton.addEventListener("click", () => {
-      container.classList.add("right-panel-active");
+    container.classList.add("right-panel-active");
     });
 
     signInButton.addEventListener("click", () => {
-      container.classList.remove("right-panel-active");
+    container.classList.remove("right-panel-active");
     });
     // JavaScript to handle the toggle
     function togglePasswordVisibility(passwordFieldId) {
-      var passwordInput = document.getElementById(passwordFieldId);
-      if (passwordInput.type === "password") {
+    var passwordInput = document.getElementById(passwordFieldId);
+    if (passwordInput.type === "password") {
         passwordInput.type = "text";
         if(passwordFieldId=='password1') {visBtn[0].innerHTML = '<i class="fa-solid fa-eye-slash"></i>';}
         else if(passwordFieldId=='password2') {visBtn[1].innerHTML = '<i class="fa-solid fa-eye-slash"></i>';}
         else if(passwordFieldId=='password'){visBtn[2].innerHTML = '<i class="fa-solid fa-eye-slash"></i>';}
-      } 
-      else {
+    } 
+    else {
         passwordInput.type = "password";
         if(passwordFieldId=='password1') {visBtn[0].innerHTML = '<i class="fa-solid fa-eye"></i>';}
         else if(passwordFieldId=='password2') {visBtn[1].innerHTML = '<i class="fa-solid fa-eye"></i>';}
         else if(passwordFieldId=='password'){visBtn[2].innerHTML = '<i class="fa-solid fa-eye"></i>';}
-      }
     }
-  </script>
-</html>
+    }
+</script>
+{% endblock js %}

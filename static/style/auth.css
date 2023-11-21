@@ -4,38 +4,6 @@
     box-sizing: border-box;
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink {
-
-    from,
-    to {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: white;
-    }
-}
-
-.typing-effect {
-    overflow: hidden;
-    border-right: 3px solid transparent;
-    white-space: nowrap;
-    margin: 0 auto;
-    animation:
-        typing 3s steps(40, end),
-        blink .75s step-end 3.5;
-}
-
 body {
     font-family: Roboto, Arial;
     padding-top: 70px;
@@ -327,6 +295,7 @@ input:focus~.after-blue {
 input:focus~.after-purple {
     background-position: 0 0;
 }
+
 .toggleVisBtn {
     color: rgba(0, 0, 0, 0.3);
     position: absolute;
@@ -335,4 +304,11 @@ input:focus~.after-purple {
     height: 100%;
     display: flex;
     align-items: center;
+}
+
+.reset-form {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
 }
