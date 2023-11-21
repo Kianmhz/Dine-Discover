@@ -19,7 +19,7 @@ main page
     <div class="container">
         <input class="location-search-bar" type="text" placeholder="Canary, Wharf, London">
         <input class="search-bar" type="text" placeholder="Start typing to search...">
-        <button class="findout-button">Find Out</button>
+        <button class="main-button">Find Out</button>
     </div>
 </div>
 
@@ -49,7 +49,7 @@ main page
                 <div>(review 20)</div>
             </div>
         </div>
-        <div class="restaurants-info">
+        {% comment %} <div class="restaurants-info">
             <a href="{% url 'info' %}">
                 <div class="thumbnail-container">
                     <img class="thumbnail" src="{% static 'img/rest_2.jpeg' %}">
@@ -143,7 +143,7 @@ main page
                 <i class="fa-solid fa-star-half-stroke"></i>
                 <div>(review 19)</div>
             </div>
-        </div>
+        </div> {% endcomment %}
     </div>
 </section>
 {% endblock content %}

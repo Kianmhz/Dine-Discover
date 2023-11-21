@@ -32,14 +32,7 @@ def loginPage(request):
             if user is not None:
                 login(request, user)
                 return redirect('home')
-            else:
-                return redirect('login_register')
-        else:
-            print(form.errors)
-            return redirect('home')
-    else:
-        return redirect('login_register')
-
+    return redirect('login_register')
 
 def signupPage(request):
     if request.method == 'POST':

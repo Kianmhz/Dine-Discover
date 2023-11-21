@@ -46,6 +46,10 @@ body {
     height: 100vh
 }
 
+.slider {
+    padding: 0;
+}
+
 .slider::before {
     content: "";
     width: 100%;
