@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/auth.css' %}"/>
+    <script src="https://kit.fontawesome.com/bc8482cdd5.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body class="slider">
+    <div class="container" id="container">
+      {% if request.path == "/login_register" %}
+      <a href={% url "home" %}><div class="back-icon"><i class="fa-solid fa-arrow-left"></i></div></a>
+      {% elif request.path|slice:":6" == "/reset" %}
+      <a href={% url "login_register" %}><div class="back-icon"><i class="fa-solid fa-arrow-left"></i></div></a>
+      {% endif %}
+      {% block content %}
+      {% endblock content %}
+    </div>
+  </body>
+    {% block js %}
+    {% endblock js %}
+</html>
+
+<style>
+  .back-icon {
+    position: absolute;
+    z-index: 100000;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+</style>

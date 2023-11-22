@@ -1,57 +1,49 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script src="https://kit.fontawesome.com/bc8482cdd5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'style/style.css' %}">
-    {% block style %}
-    {% endblock style %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/bc8482cdd5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}" />
+    {% block style %} {% endblock style %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <title>{% block title %}{% endblock title %}</title>
-</head>
-<body class="no-transition">
-    <script>document.body.style.visibility='hidden';</script>
-    {% include './header.html' %}
-    {% block content %}
-    {% endblock content %}
+  </head>
+  <body>
+    {% include './header.html' %} {% block content %} {% endblock content %} 
     {% include './footer.html' %}
-</body>
+  </body>
 </html>
-
 <script>
-document.body.style.visibility=`hidden`;
+document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-theme");
+        document.body.classList.remove("light-theme");
+        document.getElementById("darkmode-toggle").checked = true;
+      } 
+      else {
+        document.body.classList.add("light-theme");
+        document.body.classList.remove("dark-theme");
+        document.getElementById("darkmode-toggle").checked = false;
+      }
+  });
 
-document.addEventListener('DOMContentLoaded', function(event) {
-    if(localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-        document.body.classList.remove('light-theme');
-        document.getElementById('darkmode-toggle').checked = true;
-    }
-    else {
-        document.body.classList.add('light-theme');
-        document.body.classList.remove('dark-theme');
-        document.getElementById('darkmode-toggle').checked = false;
-    }
-});
-
-function toggleMenu() {
-    if(localStorage.getItem('theme') === 'dark') {
-        document.body.classList.remove('dark-theme');
-        document.body.classList.add('light-theme');
-        localStorage.setItem('theme', 'light');
+  function toggleMenu() {
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.remove("dark-theme");
+      document.body.classList.add("light-theme");
+      localStorage.setItem("theme", "light");
     } else {
-        document.body.classList.remove('light-theme');
-        document.body.classList.add('dark-theme');
-        localStorage.setItem('theme', 'dark');
+      document.body.classList.remove("light-theme");
+      document.body.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
     }
-}
-
-window.onload = function() {
-    setTimeout(function() {
-        document.body.classList.remove('no-transition');
-        document.body.style.visibility='visible';
-    }, 500);
-};
+  }
 </script>
