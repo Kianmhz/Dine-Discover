@@ -16,11 +16,6 @@
     --third-color: #ffffff;
 }
 
-.no-transition * {
-    transition: none !important;
-    animation: none !important;
-}
-
 .darkmode label {
     width: 75px;
     height: 30px;
@@ -105,7 +100,6 @@ body {
     font-family: Roboto, Arial;
     padding-top: 70px;
     background-color: var(--main-color);
-    transition: 0.5s;
 }
 
 .container {
