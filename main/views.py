@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import Media
+from os import remove
 
 # Create your views here.
 
@@ -49,15 +50,7 @@ def signupPage(request):
 
 def infoPage(request):
     user = request.user
-    if request.method == 'POST':
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
-            review.user = user
-            review.save()
-    else:
-        form = ReviewForm()
-    context = {'user': user, 'form': form}
+    context = {'user': user}
     return render(request, "main/info.html", context)
 
 
@@ -91,7 +84,14 @@ def editprofilePage(request):
 
             # Save the uploaded image in Media model
             if 'avatar' in request.FILES:  # Check if avatar is being updated
-                avatar = Media(file=request.FILES['avatar'])
+                file = request.FILES['avatar']
+                file.name = f"{user.username}.png"
+                try:
+                    remove(f"./media/media/{user.username}.png")
+
+                except:
+                    pass
+                avatar = Media(file=file)
                 avatar.save()
 
                 # Associate the User instance with the Media instance
