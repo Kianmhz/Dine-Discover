@@ -17,11 +17,8 @@ class User(AbstractUser):
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=50)
-    city = models.CharField(max_length=50)
-    country = models.CharField(max_length=50)
     content = models.TextField(null=True, blank=True)
     location = models.TextField(null=True, blank=True)
-    thumbnail = models.ForeignKey(Media, on_delete=models.DO_NOTHING, null=True)
 
 
 class Review(models.Model):
